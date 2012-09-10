@@ -27,13 +27,14 @@ Archive of exported [NerdTool](https://github.com/balthamos/geektool-3) logs.
 php.ini files used in my MAMP stack
 * PHP 5.3.14
 
-### sublime text 2
-#### user setting
-Preferences.sublime-settings
+### [sublime text 2](https://github.com/sjugge/dotfiles/tree/master/sublime%20text%202)
 
-#### snippets
-##### bash snippets
+#### [snippets](https://github.com/sjugge/dotfiles/tree/master/sublime%20text%202/snippets)
+##### [bash snippets](https://github.com/sjugge/dotfiles/tree/master/sublime%20text%202/snippets/bash)
 Some bash scripting snippets
+
+#### [user settings](https://github.com/sjugge/dotfiles/tree/master/sublime%20text%202/user%20settings)
+Preferences.sublime-settings
 
 ### [terminal](https://github.com/sjugge/dotfiles/tree/master/terminal)
 Terminal.app settings file
