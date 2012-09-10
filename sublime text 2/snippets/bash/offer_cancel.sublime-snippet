@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+# offering cancel
+echo "Continue? [y/n]: "
+read -e YN
+if [ "$YN" = "n" ]; then
+	echo "exiting..."
+	exit
+fi
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>yn</tabTrigger>
+</snippet>
