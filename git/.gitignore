@@ -1,0 +1,12 @@
+# OS specific files
+*.DS_Store
+*.Spotlight-V100
+*.Trashes
+
+# app specific files
+*bbprojectd
+*nbproject
+*.sublime*
+
+# user specific Drupal setting files
+*/www/sites/sjugge.*
