@@ -9,8 +9,8 @@ Extensions for [Alfred](http://www.alfredapp.com/), needs some housekeeping and 
 User specific .bash_profile as found in <code>~/</code>
 
 ### [bbedit](https://github.com/sjugge/dotfiles/tree/master/bbedit)
-#### Color schemes
-##### slightly_sjuggelarized.bbcolors
+#### [Color schemes](https://github.com/sjugge/dotfiles/tree/master/bbedit/color%20schemes)
+##### [slightly_sjuggelarized.bbcolors](https://github.com/sjugge/dotfiles/blob/master/bbedit/color%20schemes/slightly_sjuggelarized.bbcolors)
 Slightly Sjuggelarized is based on the [Solarized](http://ethanschoonover.com/solarized) color scheme.
 
 ### [drush](https://github.com/sjugge/dotfiles/tree/master/drush)
@@ -25,7 +25,8 @@ Archive of exported [NerdTool](https://github.com/balthamos/geektool-3) logs.
 ### [php](https://github.com/sjugge/dotfiles/tree/master/php)
 #### [php.ini](https://github.com/sjugge/dotfiles/tree/master/php/php%205.3.14)
 php.ini files used in my MAMP stack
-* PHP 5.3.14
+
+##### [PHP 5.3.14](https://github.com/sjugge/dotfiles/blob/master/php/php%205.3.14/php.ini)
 
 ### [sublime text 2](https://github.com/sjugge/dotfiles/tree/master/sublime%20text%202)
 
