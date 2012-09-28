@@ -1,10 +1,16 @@
 # source this .bash_profile
 alias sb="source ~/.bash_profile"
 
-# custom scripts
-alias ndr="sh ~/Workspace/scripts/shell_scripts/drupal_repo_structure_setup.sh"
-alias rms="sh ~/Workspace/scripts/shell_scripts/wip/rum_multisite.sh"
+HISTFILESIZE="999999999999999"
+HISTIGNORE="ls:pwd:exit:mount"
 
+# custom scripts
+alias ?="sh ~/Workspace/scripts/shell_scripts/wip/?.sh"
+alias death2svn="sh ~/Workspace/scripts/shell_scripts/death_to_svn.sh"
+alias ndr="sh ~/Workspace/scripts/shell_scripts/drupal_repo_structure_setup.sh"
+alias mamp_tail+="sh ~/Workspace/scripts/shell_scripts/mamp_tail.sh"
+alias tar+="sh ~/Workspace/scripts/shell_scripts/tar+.sh"
+  
 # drush
 alias dcca="drush cc all"
 alias dccd="drush cc drush"
