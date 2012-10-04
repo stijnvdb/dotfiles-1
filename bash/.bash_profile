@@ -12,6 +12,7 @@ alias rms="sh ~/Workspace/scripts/shell_scripts/wip/rum_multisite.sh"
 alias mamp_tail+="sh ~/Workspace/scripts/shell_scripts/mamp_tail.sh"
 alias tail+="sh ~/Workspace/scripts/shell_scripts/tail+.sh"
 alias tar+="sh ~/Workspace/scripts/shell_scripts/tar+.sh"
+alias sqlp="sh ~/Workspace/scripts/shell_scripts/mysql_processlist.sh"
   
 # drush
 alias dral="drush cc all"
@@ -32,6 +33,7 @@ alias gbr="git branch"
 
 # helpers
 alias ls+="ls -aFhlG"
+alias rm+="rm -rfv"
 alias flushdns='sudo killall -HUP mDNSResponder'
 
 # navigation
