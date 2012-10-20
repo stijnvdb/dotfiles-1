@@ -4,10 +4,11 @@
  * USER SPECIFIC CONFIGURATION
  */
 
-$options['shell-aliases']['rcr'] = 'rum-create repository';
-$options['shell-aliases']['rcv'] = 'rum-create vanilla';
-$options['shell-aliases']['ccd'] = 'cc drush';
-$options['shell-aliases']['cca'] = 'cc all';
+// aliases moved to .bash_profile for more awesomeness
+// $options['shell-aliases']['rcr'] = 'rum-create repository';
+// $options['shell-aliases']['rcv'] = 'rum-create vanilla';
+// $options['shell-aliases']['ccd'] = 'cc drush';
+// $options['shell-aliases']['cca'] = 'cc all';
 
 
 /**

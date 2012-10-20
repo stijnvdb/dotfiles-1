@@ -1,14 +1,25 @@
 # source this .bash_profile
 alias sb="source ~/.bash_profile"
 
+HISTFILESIZE="999999999999999"
+HISTIGNORE="ls:pwd:exit:mount"
+
 # custom scripts
+alias ?="sh ~/Workspace/scripts/shell_scripts/wip/?.sh"
+alias death2svn="sh ~/Workspace/scripts/shell_scripts/death_to_svn.sh"
 alias ndr="sh ~/Workspace/scripts/shell_scripts/drupal_repo_structure_setup.sh"
 alias rms="sh ~/Workspace/scripts/shell_scripts/wip/rum_multisite.sh"
-
+alias mamp_info="sh ~/Workspace/scripts/shell_scripts/mamp_info.sh"
+alias mamp_tail="sh ~/Workspace/scripts/shell_scripts/mamp_tail.sh"
+alias tail+="sh ~/Workspace/scripts/shell_scripts/tail+.sh"
+alias tar+="sh ~/Workspace/scripts/shell_scripts/tar+.sh"
+alias sqlp="sh ~/Workspace/scripts/shell_scripts/mysql_processlist.sh"
+  
 # drush
-alias dcca="drush cc all"
+alias dral="drush cc all"
 alias dccd="drush cc drush"
-alias dhg="drush help | grep"
+alias drep="drush help | grep"
+alias dron="drush cron"
 alias drumr="drush rc repository"
 alias drumd="drush rd"
 
@@ -23,6 +34,7 @@ alias gbr="git branch"
 
 # helpers
 alias ls+="ls -aFhlG"
+alias rm+="rm -rfv"
 alias flushdns='sudo killall -HUP mDNSResponder'
 
 # navigation
