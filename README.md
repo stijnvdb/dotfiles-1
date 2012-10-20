@@ -39,3 +39,6 @@ Preferences.sublime-settings
 
 ## [terminal](https://github.com/sjugge/dotfiles/tree/master/terminal)
 Terminal.app settings file
+
+## [vi](https://github.com/sjugge/dotfiles/tree/master/vi)
+.vimrc file as found in <code>~/</code>
