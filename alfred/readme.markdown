@@ -6,7 +6,7 @@ This repo contains Alfred extensions that might be of use to others, they arenâ€
 ### What is Alfred you ask...
 [Alfred] (http://www.alfredapp.com/) is probly the most essential productivity tool on Mac OS X.
 
-### Usagae
+### Usage
 Use the .alfredextension files to easily install them.
 
 ## Extensions
