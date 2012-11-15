@@ -41,5 +41,6 @@ alias flushdns='sudo killall -HUP mDNSResponder'
 # alias bash10="history | awk '{print $2}' | awk 'BEGIN {FS="|"} {print $1}' | sort | uniq -c | sort -rn | head -10"
 
 # navigation
-alias cds="cd ~/Sites"
-alias cdw="cd ~/Workspace"
+alias cdd="cd ~/Downloads/"
+alias cds="cd ~/Sites/"
+alias cdw="cd ~/Workspace/"
