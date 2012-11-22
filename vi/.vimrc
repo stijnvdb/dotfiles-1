@@ -9,6 +9,7 @@ set smartindent
 set title              " title in console
 set hlsearch           " highlight all search matches
 set incsearch          " incremental searches
+set paste
 
 set number             " show line numbers
 set ignorecase         " ignore case when searching
