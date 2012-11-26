@@ -46,3 +46,16 @@ alias etchog="less /etc/hosts | grep"
 alias cdd="cd ~/Downloads/"
 alias cds="cd ~/Sites/"
 alias cdw="cd ~/Workspace/"
+
+# vagrant
+alias vlog="VAGRANT_LOG=INFO "
+alias vup="vagrant up"
+alias svup="sudo vagrant up"
+alias vha="vagrant halt"
+alias vsu="vagrant suspend"
+alias vre="vagrant reload"
+alias vst="vagrant status"
+alias vde="vagrant destroy -f"
+
+# virtual box
+alias vbl="VBoxManage list vms"
