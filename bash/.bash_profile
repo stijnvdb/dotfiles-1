@@ -59,3 +59,4 @@ alias vde="vagrant destroy -f"
 
 # virtual box
 alias vbl="VBoxManage list vms"
+alias vblg="VBoxManage list vms | grep "
