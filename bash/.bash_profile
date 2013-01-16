@@ -56,7 +56,7 @@ alias cdw="cd ~/Workspace/"
 # vagrant
 alias vlog="VAGRANT_LOG=INFO "
 alias vup="vagrant up"
-alias svup="sudo vagrant up"
+alias svup="sudo vagrant up" #should not be used, see https://github.com/mitchellh/vagrant/issues/1185#issuecomment-12317237
 alias vha="vagrant halt"
 alias vsu="vagrant suspend"
 alias vre="vagrant reload"
