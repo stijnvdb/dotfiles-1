@@ -56,12 +56,13 @@ alias cdw="cd ~/Workspace/"
 # vagrant
 alias vlog="VAGRANT_LOG=INFO "
 alias vup="vagrant up"
+alias vssh="vagrant shh"
 # alias svup="sudo vagrant up" #should not be used, see https://github.com/mitchellh/vagrant/issues/1185#issuecomment-12317237
 alias vha="vagrant halt"
 alias vsu="vagrant suspend"
 alias vre="vagrant reload"
 alias vst="vagrant status"
-alias vdef="vagrant destroy -f"
+alias vde="vagrant destroy"
 alias vdef="vagrant destroy -f"
 
 # drush remote @vagrant
