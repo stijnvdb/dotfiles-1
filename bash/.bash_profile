@@ -33,8 +33,8 @@ alias gco="git checkout"
 alias gbr="git branch"
 
 # helpers
-alias a="alias"
-alias ag="alias | grep"
+alias ali="alias"
+alias alig="alias | grep"
 alias ll="ls -Fls"
 alias ls+="ls -aFhlG"
 alias lsmod="ls -al|awk '{k=0;s=0;for(i=0;i<=8;i++){;k+=((substr(\$1,i+2,1)~/[rwxst]/)*2^(8-i));};j=4;fo‌​r(i=4;i<=10;i+=3){;s+=((substr(\$1,i,1)~/[stST]/)*j);j/=2;};if(k){;printf(\"%0o%0‌​o \",s,k);};print;}'"
@@ -56,12 +56,16 @@ alias cdw="cd ~/Workspace/"
 # vagrant
 alias vlog="VAGRANT_LOG=INFO "
 alias vup="vagrant up"
-alias svup="sudo vagrant up" #should not be used, see https://github.com/mitchellh/vagrant/issues/1185#issuecomment-12317237
+# alias svup="sudo vagrant up" #should not be used, see https://github.com/mitchellh/vagrant/issues/1185#issuecomment-12317237
 alias vha="vagrant halt"
 alias vsu="vagrant suspend"
 alias vre="vagrant reload"
 alias vst="vagrant status"
-alias vde="vagrant destroy -f"
+alias vdef="vagrant destroy -f"
+alias vdef="vagrant destroy -f"
+
+# drush remote @vagrant
+alias d@v="drush @vagrant"
 
 # virtual box
 alias vbl="VBoxManage list vms"
