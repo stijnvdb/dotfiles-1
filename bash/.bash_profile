@@ -54,6 +54,7 @@ alias cds="cd ~/Sites/"
 alias cdw="cd ~/Workspace/"
 
 # vagrant
+alias vafy="cp -r ~/Workspace/Vagrant/vagrant-park/precise64lamp/Vagrantfile .; cp -r ~/Workspace/Vagrant/vagrant-park/precise64lamp/scripts ."
 alias vlog="VAGRANT_LOG=INFO "
 alias vup="vagrant up"
 alias vssh="vagrant ssh"
