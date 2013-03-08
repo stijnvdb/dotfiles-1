@@ -44,4 +44,4 @@ Preferences.sublime-settings
 Terminal.app settings file
 
 ## [vi](https://github.com/sjugge/dotfiles/tree/master/vi)
-.vimrc file as found in <code>~/</code>
+.vimrc file and .vim folder as found in <code>~/</code>
