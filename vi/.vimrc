@@ -6,6 +6,7 @@ set expandtab          " tabs are converted to spaces, use only when required
 set softtabstop=2
 set shiftwidth=2		
 set smartindent
+set tabstop=2          " 2 spaced tabs
 set title              " title in console
 set hlsearch           " highlight all search matches
 set incsearch          " incremental searches
