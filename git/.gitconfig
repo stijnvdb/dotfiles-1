@@ -1,0 +1,30 @@
+[user]
+	name = Jurgen Verhasselt
+	email = sjugge@heretiksambrosia.net
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = auto
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta
+  plain = white bold
+  old = red bold
+  new = green bold
+  commit = yellow bold
+  func = green dim
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[core]
+	excludesfile = /Users/sjugge/.gitignore
+
+[push]
+  default = current
