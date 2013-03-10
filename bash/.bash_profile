@@ -53,7 +53,7 @@
         alias vdef="vagrant destroy -f"
 
     ### git
-      alias gst="git status"
+      alias gst="clear && git status"
       alias gad="git add"
       alias gcm="git commit"
       alias gps="git push"
