@@ -60,6 +60,8 @@
       alias gpl="git pull"
       alias gco="git checkout"
       alias gbr="git branch"
+      alias gts="git log --all --graph --decorate --oneline --simplify-by-decoration"
+      alias gtl="git show-branch --all"
       alias pushall='for i in `git remote`; do git push $i; done;'
       alias pullall='for i in `git remote`; do git pull $i; done;'
 
@@ -70,6 +72,7 @@
       alias death2svn="sh ~/Workspace/shell_scripts/death_to_svn.sh"
       alias ndr="sh ~/Workspace/scripts/drupal_repo_structure_setup.sh"
       alias tar+="sh ~/Workspace/shell_scripts/tar+.sh"
+      alias scp+="sh ~/Workspace/shell_scripts/scp+.sh"
 
     ### mamp # depracted
       alias rms="sh ~/Workspace/scripts/wip/rum_multisite.sh"
