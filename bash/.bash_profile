@@ -109,7 +109,9 @@
     alias flushdns="sudo killall -HUP mDNSResponder"
     alias line="printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -"
 
-  # navigation
+    alias st="clear && git status && svn status && vagrant status"
+
+  ## navigation
     alias cdd="cd ~/Downloads/"
     alias cds="cd ~/Sites/"
     alias cdw="cd ~/Workspace/"
