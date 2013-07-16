@@ -12,7 +12,7 @@
         alias ps="export PS1='\W » '" # ~/foo/bar »
         alias psl="export PS1='\w » '" # bar »
         alias psu="export PS1='\u@\H » '" # user@host »
-        alias psul="PS1='\u@\h:\w » '" # user@host:~/foo/bar »
+        alias psul="export PS1='\u@\h:\w » '" # user@host:~/foo/bar »
      
       #### special characters 
         alias pst="export PS1='> '"
@@ -51,6 +51,7 @@
         alias vst="vagrant status"
         alias vde="vagrant destroy"
         alias vdef="vagrant destroy -f"
+        alias dv="drush @vagrant"
 
     ### git
       alias gst="clear && git status"
@@ -65,6 +66,13 @@
       alias pushall='for i in `git remote`; do git push $i; done;'
       alias pullall='for i in `git remote`; do git pull $i; done;'
 
+    ### sublime text
+      alias sub='subl . &'
+
+    ### virtualbox
+      alias vbl="VBoxManage list vms"
+      alias vbla="VBoxManage list runningvms"
+      alias vblg="VBoxManage list vms | grep"
 
   ## custom scripts
 
@@ -73,6 +81,7 @@
       alias ndr="sh ~/Workspace/scripts/drupal_repo_structure_setup.sh"
       alias tar+="sh ~/Workspace/shell_scripts/tar+.sh"
       alias scp+="sh ~/Workspace/shell_scripts/scp+.sh"
+      alias rm+="sh ~/Workspace/shell_scripts/rm+.sh"
 
     ### mamp # depracted
       alias rms="sh ~/Workspace/scripts/wip/rum_multisite.sh"
@@ -105,6 +114,9 @@
     ### remove content
     alias rmf="rm -rf"
     alias rmfv="rm -rfv"
+    
+    ### misc
+    alias mkdir="mkdir -pv"
     
     alias flushdns="sudo killall -HUP mDNSResponder"
     alias line="printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -"
