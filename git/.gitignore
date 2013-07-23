@@ -11,6 +11,6 @@
 # user specific Drupal setting files
 */www/sites/sjugge.*
 
-.vagrant
+.vagrant*
 Vagrantfile
 scripts/
