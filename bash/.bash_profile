@@ -108,6 +108,7 @@
     alias ll="ls -aFGlT"
     alias ll+="pwd && ls -aFGhlOTs"
     alias ll-="clear && ls -1aF && echo ''"
+    alias lsd="ls -d */"
     alias ft="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
     alias ftg="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/' | grep"
 
