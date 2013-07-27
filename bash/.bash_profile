@@ -130,17 +130,7 @@
     alias cdw="cd ~/Workspace/"
 
 
-## Settings
-
-  # misc
-    HISTFILESIZE="999999999999999"
-    HISTIGNORE="ls:pwd:exit:mount"
-
-  # shell
-    export PS1="\W » "
-
-
-## functions
+# functions
 
   ### ssh config autocomplete
 
