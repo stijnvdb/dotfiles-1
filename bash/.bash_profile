@@ -7,7 +7,7 @@
   ## shell
     export PS1="\W » " # default
 
-    ###  alter prompt
+    ### alter prompt
       #### sensible defaults
         alias ps="export PS1='\W » '" # ~/foo/bar »
         alias psl="export PS1='\w » '" # bar »
@@ -22,6 +22,11 @@
 
       #### fancy pants
         alias psfp=""
+
+  ## environment variables
+
+    export LC_ALL=en_GB # fix for cathode.app pearl locale warnings
+    export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin"
 
 # Aliases
 
@@ -81,7 +86,7 @@
       alias ndr="sh ~/Workspace/scripts/drupal_repo_structure_setup.sh"
       alias tar+="sh ~/Workspace/shell_scripts/tar+.sh"
       alias scp+="sh ~/Workspace/shell_scripts/scp+.sh"
-      alias rm+="sh ~/Workspace/shell_scripts/rm+.sh"
+      alias rm="sh ~/Workspace/shell_scripts/rm+.sh"
 
     ### mamp # depracted
       alias rms="sh ~/Workspace/scripts/wip/rum_multisite.sh"
@@ -129,6 +134,9 @@
     alias cds="cd ~/Sites/"
     alias cdw="cd ~/Workspace/"
 
+  ## system
+    alias cpu="top -F -R -o cpu" # display top CPU processes
+    alias io="iostat -w1" # disply disk i/o
 
 # functions
 
