@@ -28,7 +28,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliasses
 
-  alias zb="source ~/.zshrc"
+  alias sz="source ~/.zshrc"
 
 # Config
 
@@ -45,9 +45,15 @@ source $ZSH/oh-my-zsh.sh
   ## Theme
 
     # Set name of the theme to load
-    # Look in ~/.oh-my-zsh/themes/
+    # Look in ~/.oh-my-zsh/themes/ or https://www.dropbox.com/sh/u532agyv1hyash1/LS9yNESRlQ?lst#/ for screenshots
     # Optionally, if you set this to "random", it'll load a random theme each time that oh-my-zsh is loaded
-    ZSH_THEME="robbyrussel"
+
+    # ZSH_THEME="robbyrussell" # default, git support
+    ZSH_THEME="jreese" # minimal layout, git support
+    # ZSH_THEME="sjugge-02" # hack of jreese theme
+    # ZSH_THEME="juanghurtado" # multiple line, advanced git status support 
+    # ZSH_THEME="minimal" # minimal layout, git support
+    # ZSH_THEME="norm" minimal layout, git support
 
   ## oh mu zsh config path
   
