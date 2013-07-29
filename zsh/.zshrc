@@ -49,8 +49,8 @@ source $ZSH/oh-my-zsh.sh
     # Optionally, if you set this to "random", it'll load a random theme each time that oh-my-zsh is loaded
 
     # ZSH_THEME="robbyrussell" # default, git support
-    ZSH_THEME="jreese" # minimal layout, git support
-    # ZSH_THEME="sjugge-02" # hack of jreese theme
+    # ZSH_THEME="jreese" # minimal layout, git support
+    ZSH_THEME="sjugge-02" # hack of jreese theme
     # ZSH_THEME="juanghurtado" # multiple line, advanced git status support 
     # ZSH_THEME="minimal" # minimal layout, git support
     # ZSH_THEME="norm" minimal layout, git support
