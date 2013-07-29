@@ -37,13 +37,14 @@ source $ZSH/oh-my-zsh.sh
 
   ## PATH
 
-    export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
+    export PATH="$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin"
 
   ## Plugins
 
     # Which plugins to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
     # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
     plugins=(git)
+    plugins=(svn)
 
   ## Theme
 
