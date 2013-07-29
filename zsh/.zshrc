@@ -46,3 +46,24 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
+
+# Config 
+
+  ## Path
+
+    export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin
+
+  ## Prompt
+
+    export PS1="%~ » "
+
+# Aliasses
+
+  alias zb="source .zshrc"
+
+# Include shell aliasses
+if [ -f ~/.shrc ]; then
+  source ~/.shrc
+else
+  print "Error: ~/.shrc not found."
+fi
