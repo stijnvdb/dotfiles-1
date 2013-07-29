@@ -26,7 +26,10 @@
 
 source $ZSH/oh-my-zsh.sh
 
-# Aliasses
+# Aliases
+
+  # zsh specific aliases only
+  # shell aliases go in `~/.shrc`
 
   alias sz="source ~/.zshrc"
 
@@ -50,7 +53,7 @@ source $ZSH/oh-my-zsh.sh
 
     # ZSH_THEME="robbyrussell" # default, git support
     # ZSH_THEME="jreese" # minimal layout, git support
-    ZSH_THEME="sjugge-02" # hack of jreese theme
+    ZSH_THEME="sjugge-01" # hack of jreese theme
     # ZSH_THEME="juanghurtado" # multiple line, advanced git status support 
     # ZSH_THEME="minimal" # minimal layout, git support
     # ZSH_THEME="norm" minimal layout, git support
