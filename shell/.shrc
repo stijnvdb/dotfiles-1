@@ -41,7 +41,7 @@
         alias dv="drush @vagrant"
 
     ### git
-      alias gst="clear && git status"
+      alias gst="clear; echo "Remotes"; echo ""; git remote -v; echo ""; echo "Branches"; echo ""; git branch -a; echo ""; echo "Status"; echo ""; git status"
       alias gad="git add"
       alias gcm="git commit"
       alias gps="git push"
