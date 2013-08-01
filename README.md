@@ -13,6 +13,11 @@ User specific .bash_profile as found in <code>~/</code>
 ##### [slightly_sjuggelarized.bbcolors](https://github.com/sjugge/dotfiles/blob/master/bbedit/color%20schemes/slightly_sjuggelarized.bbcolors)
 Slightly Sjuggelarized is based on the [Solarized](http://ethanschoonover.com/solarized) color scheme.
 
+## [cmus](https://github.com/sjugge/dotfiles/tree/master/cmus)
+[cmus](https://github.com/cmus/cmus) conf and themes as ound in `~/.cmus`:
+
+* [Gems.theme source](https://github.com/prakhar1989/Gems)
+
 ## [drush](https://github.com/sjugge/dotfiles/tree/master/drush)
 .drushrc.php as found in <code>~/.drush</code>
 
@@ -45,3 +50,6 @@ Terminal.app settings file
 
 ## [vi](https://github.com/sjugge/dotfiles/tree/master/vi)
 .vimrc file and .vim folder as found in <code>~/</code>
+
+## [zsh](https://github.com/sjugge/dotfiles/tree/master/zsh)
+zsh config and [stripped down fork](https://github.com/sjugge/oh-my-zsh) of oh-my-zsh
