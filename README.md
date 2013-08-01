@@ -36,6 +36,9 @@ php.ini files used in my MAMP stack
 ## [readline](https://github.com/sjugge/dotfiles/blob/master/readline/.inputrc)
 Some autocomplection and bell sanity
 
+## [shell](https://github.com/sjugge/dotfiles/tree/master/shell)
+Bash & Zsh shared config
+
 ## [sublime text 2](https://github.com/sjugge/dotfiles/tree/master/sublime%20text%202)
 
 #### [snippets](https://github.com/sjugge/dotfiles/tree/master/sublime%20text%202/snippets)
