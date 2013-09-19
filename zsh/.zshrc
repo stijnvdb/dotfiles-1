@@ -2,7 +2,7 @@
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
@@ -22,9 +22,9 @@
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
 # much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-source $ZSH/oh-my-zsh.sh
+source /Users/sjugge/Workspace/dotfiles/oh-my-zsh/oh-my-zsh.sh 
 
 # Aliases
 
@@ -43,7 +43,7 @@ source $ZSH/oh-my-zsh.sh
 
     # Which plugins to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
     # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-    plugins=(git svn)
+    plugins=(git)
 
   ## Theme
 
@@ -53,14 +53,14 @@ source $ZSH/oh-my-zsh.sh
 
     # ZSH_THEME="robbyrussell" # default, git support
     # ZSH_THEME="jreese" # minimal layout, git support
-    ZSH_THEME="sjugge-01" # hack of jreese theme
+    ZSH_THEME="sjugge-02" # hack of jreese theme
     # ZSH_THEME="juanghurtado" # multiple line, advanced git status support 
     # ZSH_THEME="minimal" # minimal layout, git support
     # ZSH_THEME="norm" minimal layout, git support
 
   ## oh mu zsh config path
   
-    ZSH=$HOME/.oh-my-zsh
+    ZSH=/Workspace/dotfiles/oh-my-zsh
 
 # Include shell aliasses
 if [ -f ~/.shrc ]; then

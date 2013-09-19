@@ -41,7 +41,7 @@
         alias dv="drush @vagrant"
 
     ### git
-      alias gst="clear; echo "Remotes"; echo ""; git remote -v; echo ""; echo "Branches"; echo ""; git branch -a; echo ""; echo "Status"; echo ""; git status"
+      alias gst="clear; echo "--Remotes--"; echo ""; git remote -v; echo ""; echo "--Branches--"; echo ""; git branch -a; echo ""; echo "--Status--"; echo ""; git status"
       alias gad="git add"
       alias gcm="git commit"
       alias gps="git push"
@@ -68,7 +68,7 @@
       alias ndr="sh ~/Workspace/scripts/drupal_repo_structure_setup.sh"
       alias tar+="sh ~/Workspace/shell_scripts/tar+.sh"
       alias scp+="sh ~/Workspace/shell_scripts/scp+.sh"
-      alias rm="sh ~/Workspace/shell_scripts/rm+.sh"
+      # alias rm="sh ~/Workspace/shell_scripts/rm+.sh"
 
     ### mamp # depracted
       alias rms="sh ~/Workspace/scripts/wip/rum_multisite.sh"
@@ -111,6 +111,7 @@
     alias cdd="cd ~/Downloads/"
     alias cds="cd ~/Sites/"
     alias cdw="cd ~/Workspace/"
+    alias dcl13="cd ~/Workspace/DCL13"
 
   ## system
     alias cpu="top -F -R -o cpu" # display top CPU processes
