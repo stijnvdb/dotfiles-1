@@ -24,15 +24,6 @@ DISABLE_AUTO_UPDATE="true"
 # much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-source /Users/sjugge/Workspace/dotfiles/oh-my-zsh/oh-my-zsh.sh 
-
-# Aliases
-
-  # zsh specific aliases only
-  # shell aliases go in `~/.shrc`
-
-  alias sz="source ~/.zshrc"
-
 # Config
 
   ## PATH
@@ -51,20 +42,23 @@ source /Users/sjugge/Workspace/dotfiles/oh-my-zsh/oh-my-zsh.sh
     # Look in ~/.oh-my-zsh/themes/ or https://www.dropbox.com/sh/u532agyv1hyash1/LS9yNESRlQ?lst#/ for screenshots
     # Optionally, if you set this to "random", it'll load a random theme each time that oh-my-zsh is loaded
 
-    # ZSH_THEME="robbyrussell" # default, git support
-    # ZSH_THEME="jreese" # minimal layout, git support
     ZSH_THEME="sjugge-02" # hack of jreese theme
-    # ZSH_THEME="juanghurtado" # multiple line, advanced git status support 
-    # ZSH_THEME="minimal" # minimal layout, git support
-    # ZSH_THEME="norm" minimal layout, git support
 
-  ## oh mu zsh config path
-  
-    ZSH=/Workspace/dotfiles/oh-my-zsh
+  ## oh my zsh config path
 
-# Include shell aliasses
-if [ -f ~/.shrc ]; then
-  source ~/.shrc
-else
-  print "Error: ~/.shrc not found."
-fi
+    ZSH=~/.oh-my-zsh
+
+# source stuff
+
+  ## source oh-my-zsh
+  source ~/.oh-my-zsh/oh-my-zsh.sh
+
+  ## sz source alias
+  alias sz="source ~/.zshrc"
+
+  # source shell aliasses
+  if [ -f ~/.shrc ]; then
+    source ~/.shrc
+  else
+    print "Error: ~/.shrc not found."
+  fi
