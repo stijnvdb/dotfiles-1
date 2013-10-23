@@ -99,13 +99,12 @@
     alias ft="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'"
     alias ftg="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/' | grep"
 
-### misc
+  ### misc
     alias mkdir="mkdir -pv"
-    
     alias flushdns="sudo killall -HUP mDNSResponder"
     alias line="printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -"
-
     alias st="clear && git status && svn status && vagrant status"
+    alias cccc="compass compile && drush @vagrant cc all"
 
   ## navigation
     alias cdd="cd ~/Downloads/"
