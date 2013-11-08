@@ -25,8 +25,13 @@
 
 [core]
 	excludesfile = /Users/sjugge/.gitignore
+	fileMode = false
 
 [push]
-  default = current
+	default = current
+
 [alias]
 	unpushed = diff origin/master..HEAD --name-status
+
+[branch]
+	autosetuprebase = always
