@@ -90,6 +90,7 @@
     alias etcexg="less /etc/exports | grep"
     alias etchog="less /etc/hosts | grep"
     alias lbahg="less .bash_history | grep"
+    alias ip="DOMAIN='' && host $DOMAIN |grep -m 1 address|cut -d \ -f 4"
 
     ### list directory content
     alias ll="clear; pwd; ls -lah"
@@ -104,14 +105,24 @@
     alias flushdns="sudo killall -HUP mDNSResponder"
     alias line="printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -"
     alias st="clear && git status && svn status && vagrant status"
-    alias cccc="compass compile && drush @vagrant cc all"
+    alias cccc="compass compile --force --environment=development --output-style=expanded"
 
   ## navigation
     alias cdd="cd ~/Downloads/"
     alias cds="cd ~/Sites/"
+    alias cdwk="cd ~/Sites/wk-projects/"
     alias cdw="cd ~/Workspace/"
     alias dcl13="cd ~/Workspace/DCL13"
 
   ## system
     alias cpu="top -F -R -o cpu" # display top CPU processes
     alias io="iostat -w1" # disply disk i/o
+
+  ## aliases with functions
+
+    ### IP: get host info and only have the IP returned
+    host_ip()
+      { 
+        host $1 | grep -m 1 address | cut -d \  -f 4 
+      }
+    alias ip=host_ip
