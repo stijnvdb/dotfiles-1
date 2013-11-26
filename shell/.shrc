@@ -39,6 +39,7 @@
         alias vde="vagrant destroy"
         alias vdef="vagrant destroy -f"
         alias dv="drush @vagrant"
+        alias dvpw="drush @vagrant upwd admin --password='admin'"
 
     ### git
       alias gst="clear; echo "--Remotes--"; echo ""; git remote -v; echo ""; echo "--Branches--"; echo ""; git branch -a; echo ""; echo "--Status--"; echo ""; git status"
@@ -126,3 +127,11 @@
         host $1 | grep -m 1 address | cut -d \  -f 4 
       }
     alias ip=host_ip
+
+
+# Keybindings
+
+  ## Bind Alt key
+  bindkey -e
+  bindkey '^[[1;9C' forward-word
+  bindkey '^[[1;9D' backward-word
