@@ -21,7 +21,7 @@
 
       #### vagrant
         alias vlog="VAGRANT_LOG=INFO" # vagrant log
-        alias vup="sudo echo tnx && vagrant up &&" # up a vagrant box after getting sudo rights, show a notification when done"
+        alias vup="sudo echo tnx && vagrant up && terminal-notifier -title 'Vagrant up completed' -message 'Get back to your command line!'" # up a vagrant box after getting sudo rights, show a notification center alert when done"
         alias vssh="vagrant ssh" # ssh into a running vagrant box
         alias vha="vagrant halt" # halt a vagrant box
         alias vsu="vagrant suspend" # suspend a vagrant box
