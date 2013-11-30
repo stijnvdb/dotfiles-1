@@ -1,4 +1,3 @@
-#
 # .shrc 
 #
 # shell configuration
@@ -19,14 +18,6 @@
   ## command line tools
 
     ### drush
-
-      #### local
-        alias dral="drush cc all"
-        alias dccd="drush cc drush"
-        alias drep="drush help | grep"
-        alias dron="drush cron"
-        alias drumr="drush rc repository"
-        alias drumd="drush rd"
 
       #### vagrant
         alias vlog="VAGRANT_LOG=INFO "
@@ -54,6 +45,9 @@
       alias pushall='for i in `git remote`; do git push $i; done;'
       alias pullall='for i in `git remote`; do git pull $i; done;'
 
+    ### Ruby crap
+      alias gem="sudo gem"
+
     ### sublime text
       alias sub='subl . &'
 
@@ -69,14 +63,6 @@
       alias ndr="sh ~/Workspace/scripts/drupal_repo_structure_setup.sh"
       alias tar+="sh ~/Workspace/shell_scripts/tar+.sh"
       alias scp+="sh ~/Workspace/shell_scripts/scp+.sh"
-      # alias rm="sh ~/Workspace/shell_scripts/rm+.sh"
-
-    ### mamp # depracted
-      alias rms="sh ~/Workspace/scripts/wip/rum_multisite.sh"
-      alias mamp_info="sh ~/Workspace/shell_scripts/mamp_info.sh"
-      alias mamp_tail="sh ~/Workspace/shell_scripts/mamp_tail.sh"
-      alias tail+="sh ~/Workspace/shell_scripts/tail+.sh"
-      alias sqlp="sh ~/Workspace/shell_scripts/mysql_processlist.sh"
 
     ### vagrant
       alias vafy1="cp -r ~/Workspace/Vagrant/vagrant-park/precise64lamp/Vagrantfile .; cp -r ~/Workspace/Vagrant/vagrant-park/precise64lamp/scripts ."
@@ -86,11 +72,9 @@
   ## helpers & tweaks
 
     ### list and search 
-    alias ali="alias"
     alias alig="alias | grep"
-    alias etcexg="less /etc/exports | grep"
-    alias etchog="less /etc/hosts | grep"
-    alias lbahg="less .bash_history | grep"
+    alias exg="less /etc/exports | grep"
+    alias hog="less /etc/hosts | grep"
     alias ip="DOMAIN='' && host $DOMAIN |grep -m 1 address|cut -d \ -f 4"
 
     ### list directory content
@@ -105,7 +89,6 @@
     alias mkdir="mkdir -pv"
     alias flushdns="sudo killall -HUP mDNSResponder"
     alias line="printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -"
-    alias st="clear && git status && svn status && vagrant status"
     alias cccc="compass compile --force --environment=development --output-style=expanded"
 
   ## navigation
@@ -113,7 +96,6 @@
     alias cds="cd ~/Sites/"
     alias cdwk="cd ~/Sites/wk-projects/"
     alias cdw="cd ~/Workspace/"
-    alias dcl13="cd ~/Workspace/DCL13"
 
   ## system
     alias cpu="top -F -R -o cpu" # display top CPU processes
@@ -127,11 +109,3 @@
         host $1 | grep -m 1 address | cut -d \  -f 4 
       }
     alias ip=host_ip
-
-
-# Keybindings
-
-  ## Bind Alt key
-  bindkey -e
-  bindkey '^[[1;9C' forward-word
-  bindkey '^[[1;9D' backward-word
