@@ -48,6 +48,11 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
     ZSH=~/.oh-my-zsh
 
+# Stuffs
+
+  # Ruby mgmt with rbenv, http://thedrearlight.com/blog/compass-sass-drupal.html
+  eval "$(rbenv init -)"
+
 # source stuff
 
   ## source oh-my-zsh
