@@ -33,6 +33,7 @@
         alias dvpw="drush @vagrant upwd admin --password='admin'" # horrible thing to have aliased, set the UID1's of a Drupal site running on vagrant to `admin`. Only used when credentials are not provided on intake or other edge-cases.
 
     ### git
+      alias cdg="cd '$(git rev-parse --show-toplevel)'" # go to the root of the current git directory
       alias gst="clear; echo "--Remotes--"; echo ""; git remote -v; echo ""; echo "--Branches--"; echo ""; git branch -a; echo ""; echo "--Status--"; echo ""; git status" # git status like a boss, list remotes, branches and status of a repo
       alias ga="git add" # git add files and or folders
       alias gc="git commit" # git commit added (or deleted) files
@@ -47,7 +48,7 @@
       alias pullall='for i in `git remote`; do git pull $i; done;' # pull all git branches, when you need to catch up on a busy repo
 
     ### Ruby crap
-      alias gem="sudo gem" # https://twitter.com/sjugge/status/405996650835226624
+      #alias gem="sudo gem" # https://twitter.com/sjugge/status/405996650835226624
 
   ### virtualbox
       alias vbl="VBoxManage list vms" # list all virtualbox vm's on the system
@@ -101,12 +102,12 @@
 
   ## aliases with functions
 
-    ### IP: get host info and only have the IP returned
+    ### IP: get host info and only have the IP returned # NOTE: doesn't pick up /etc/hosts file overrides!
     host_ip()
       { 
         host $1 | grep -m 1 address | cut -d \  -f 4 
       }
-    alias ip=host_ip
+    alias ip=host_ip # NOTE: doesn't pick up /etc/hosts file overrides!
 
     ### coloful man pages, http://apple.stackexchange.com/a/96810/63784
     man() {
