@@ -64,8 +64,8 @@
       alias scp+="sh ~/Workspace/shell_scripts/scp+.sh" # scp stuff without breaking your head on the syntax
 
     ### vagrant
-      alias vafy1="cp -r ~/Workspace/Vagrant/vagrant-park/precise64lamp/Vagrantfile .; cp -r ~/Workspace/Vagrant/vagrant-park/precise64lamp/scripts ." # Vagrantify a repo with precise64lamp stuffs 
-      alias vafy2="cp -r ~/Workspace/Vagrant/vagrant-park/squeeze64lamp52/Vagrantfile .; cp -r ~/Workspace/Vagrant/vagrant-park/squeeze64lamp52/scripts ." # Vagrantify a repo with squeeze64lamp52 stuffs
+      alias vafy1="cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/precise64lamp/Vagrantfile .; cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/precise64lamp/scripts ." # Vagrantify a repo with precise64lamp stuffs 
+      alias vafy2="cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/squeeze64lamp52/Vagrantfile .; cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/squeeze64lamp52/scripts ." # Vagrantify a repo with squeeze64lamp52 stuffs
 
 
   ## helpers & tweaks
@@ -92,9 +92,8 @@
 
   ## navigation
     alias cdd="cd ~/Downloads/" # navigate to the ~/Downloads directory
-    alias cds="cd ~/Sites/" # navigate to the ~/Sites directory
-    alias cdwk="cd ~/Sites/wk-projects/" # navigate to the Wunderkraut projectsr directory
-    alias cdw="cd ~/Workspace/" # navigate to the ~/Workspace directory
+    alias cds="cd /Volumes/MBP\ -\ Sjugge/Sites/" # navigate to the ~/Sites directory
+    alias cdw="cd /Volumes/MBP\ -\ Sjugge/Workspace/" # navigate to the ~/Workspace directory
 
   ## system
     alias cpu="top -F -R -o cpu" # display top CPU processes
@@ -102,14 +101,12 @@
 
   ## aliases with functions
 
-    ### IP: get host info and only have the IP returned # NOTE: doesn't pick up /etc/hosts file overrides!
-    host_ip()
-      { 
-        host $1 | grep -m 1 address | cut -d \  -f 4 
-      }
-    alias ip=host_ip # NOTE: doesn't pick up /etc/hosts file overrides!
+    ### IP: get host info and only have the IP returned
+    # NOTE: doesn't pick up /etc/hosts file overrides!
+    ip() { host $1 | grep -m 1 address | cut -d \  -f 4 }
 
-    ### coloful man pages, http://apple.stackexchange.com/a/96810/63784
+    ### coloful man pages
+    # http://apple.stackexchange.com/a/96810/63784
     man() {
       env \
       LESS_TERMCAP_mb=$(printf "\e[1;31m") \
@@ -121,3 +118,13 @@
       LESS_TERMCAP_us=$(printf "\e[1;32m") \
       man "$@"
     }   
+
+    ### Papertrail - with color output 
+    # requires papertrail gem
+    pt() { 
+      if [[ $@ == *-h* ]] then; # no color output on --help
+        papertrail "$@"
+      else # colorize output
+        papertrail "$@" | perl -pe 's/^(.{15})(.)([\S]+)(.)([\S]+)/\e[0m\1\e[1;30m\2\e[0;33m\3\e[0m\4\e[1;34m\5\e[0m/g'
+      fi
+    }
