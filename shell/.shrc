@@ -31,6 +31,7 @@
         alias vdef="vagrant destroy -f" # force desotroy a vagrant instance
         alias dv="drush @vagrant" # execute drush commands on a vagrant box
         alias dvpw="drush @vagrant upwd admin --password='admin'" # horrible thing to have aliased, set the UID1's of a Drupal site running on vagrant to `admin`. Only used when credentials are not provided on intake or other edge-cases.
+        alias dvdb="drush @vagrant sql-dump --result-file=/home/vagrant/db/sql-dump.sql" # put a drush db dump in the NFS shared db folder
 
     ### git
       alias cdg="cd '$(git rev-parse --show-toplevel)'" # go to the root of the current git directory
@@ -66,6 +67,7 @@
     ### vagrant
       alias vafy1="cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/precise64lamp/Vagrantfile .; cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/precise64lamp/scripts ." # Vagrantify a repo with precise64lamp stuffs 
       alias vafy2="cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/squeeze64lamp52/Vagrantfile .; cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/squeeze64lamp52/scripts ." # Vagrantify a repo with squeeze64lamp52 stuffs
+      alias vafy3="cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/precise64lamp-solr46/Vagrantfile .; cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/precise64lamp-solr46/scripts ." # Vagrantify a repo with precise64lamp + Solr 4 stuffs
 
 
   ## helpers & tweaks
