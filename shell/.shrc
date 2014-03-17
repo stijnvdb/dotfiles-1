@@ -49,7 +49,7 @@
       alias pullall='for i in `git remote`; do git pull $i; done;' # pull all git branches, when you need to catch up on a busy repo
 
     ### Ruby crap
-      #alias gem="sudo gem" # https://twitter.com/sjugge/status/405996650835226624
+      alias gem="sudo gem" # https://twitter.com/sjugge/status/405996650835226624
 
   ### virtualbox
       alias vbl="VBoxManage list vms" # list all virtualbox vm's on the system
@@ -59,10 +59,10 @@
   ## custom scripts
 
     ### misc
-      alias death2svn="sh ~/Workspace/shell_scripts/death_to_svn.sh" # remove all svn stuff from a folder
-      alias ndr="sh ~/Workspace/scripts/drupal_repo_structure_setup.sh" # setup a Drupal repo, the script could use a sanity check
-      alias tar+="sh ~/Workspace/shell_scripts/tar+.sh" # create a tarball without breaking your head on the syntax
-      alias scp+="sh ~/Workspace/shell_scripts/scp+.sh" # scp stuff without breaking your head on the syntax
+      alias death2svn="sh /Volumes/MBP\ -\ Sjugge/Workspace/shell_scripts/death_to_svn.sh" # remove all svn stuff from a folder
+      alias ndr="sh /Volumes/MBP\ -\ Sjugge/Workspace/shell_scripts/drupal_repo_structure_setup.sh" # setup a Drupal repo, the script could use a sanity check
+      alias tar+="sh /Volumes/MBP\ -\ Sjugge/Workspace/shell_scripts/tar+.sh" # create a tarball without breaking your head on the syntax
+      alias scp+="sh /Volumes/MBP\ -\ Sjugge/Workspace/shell_scripts/scp+.sh" # scp stuff without breaking your head on the syntax
 
     ### vagrant
       alias vafy1="cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/precise64lamp/Vagrantfile .; cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/precise64lamp/scripts ." # Vagrantify a repo with precise64lamp stuffs 
@@ -93,9 +93,11 @@
     alias cccc="compass compile --force --environment=development --output-style=expanded && drush @vagrant cc all" # compile with compass and clear caches of Drupal running on a vagrant instance
 
   ## navigation
+    alias cdc="cd /Volumes/MBP\ -\ Sjugge/Cloud"
     alias cdd="cd ~/Downloads/" # navigate to the ~/Downloads directory
-    alias cds="cd /Volumes/MBP\ -\ Sjugge/Sites/" # navigate to the ~/Sites directory
-    alias cdw="cd /Volumes/MBP\ -\ Sjugge/Workspace/" # navigate to the ~/Workspace directory
+    alias cds="cd /Volumes/MBP\ -\ Sjugge/Sites/" # navigate to the Sites directory
+    alias cdw="cd /Volumes/MBP\ -\ Sjugge/Workspace/" # navigate to the Workspace directory
+    alias cwd="pwd | sed 's/ /\\ /g'"
 
   ## system
     alias cpu="top -F -R -o cpu" # display top CPU processes
