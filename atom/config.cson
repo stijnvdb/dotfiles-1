@@ -10,7 +10,7 @@
   'fontSize': 12
 'core':
   'themes': [
-    'atom-dark-ui'
+    'atom-dark-flat-ui'
     'tomorrow-night-eighties'
   ]
   'ignoredNames': [
