@@ -17,44 +17,8 @@
 
   ## command line tools
 
-    ### drush
-
-      #### vagrant
-        alias vlog="VAGRANT_LOG=INFO" # vagrant log
-        alias vup="sudo echo tnx && vagrant up && terminal-notifier -title 'Vagrant up completed' -message 'Get back to your command line!'" # up a vagrant box after getting sudo rights, show a notification center alert when done"
-        alias vssh="vagrant ssh" # ssh into a running vagrant box
-        alias vha="vagrant halt" # halt a vagrant box
-        alias vsu="vagrant suspend" # suspend a vagrant box
-        alias vre="vagrant reload" # reload a vagrant box
-        alias vst="vagrant status" # get the status of a vagrant instance
-        alias vde="vagrant destroy" # destroy a vagrant instance
-        alias vdef="vagrant destroy -f" # force desotroy a vagrant instance
-        alias dv="drush @vagrant" # execute drush commands on a vagrant box
-        alias dvpw="drush @vagrant upwd admin --password='admin'" # horrible thing to have aliased, set the UID1's of a Drupal site running on vagrant to `admin`. Only used when credentials are not provided on intake or other edge-cases.
-        alias dvdb="drush @vagrant sql-dump --result-file=/home/vagrant/db/sql-dump.sql" # put a drush db dump in the NFS shared db folder
-
-    ### git
-      alias cdg="cd '$(git rev-parse --show-toplevel)'" # go to the root of the current git directory
-      alias gst="clear; echo "--Remotes--"; echo ""; git remote -v; echo ""; echo "--Branches--"; echo ""; git branch -a; echo ""; echo "--Status--"; echo ""; git status" # git status like a boss, list remotes, branches and status of a repo
-      alias ga="git add" # git add files and or folders
-      alias gc="git commit" # git commit added (or deleted) files
-      alias gps="git push" # git push to remote
-      alias gpl="git pull" # git pull from remote
-      alias gco="git checkout" # git checkout files, folders or branch
-      alias gbr="git branch" # git branch from current branch
-      alias gts="git log --all --graph --decorate --oneline --simplify-by-decoration" # list git log entries, fancy
-      alias gl="git log --name-status" # list git log entries, with altered files for each log entry
-      alias gtl="git show-branch --all" # list git branches, including remotes
-      alias pushall='for i in `git remote`; do git push $i; done;' # push all git branches, when feeling cocky
-      alias pullall='for i in `git remote`; do git pull $i; done;' # pull all git branches, when you need to catch up on a busy repo
-
     ### Ruby crap
       alias gem="sudo gem" # https://twitter.com/sjugge/status/405996650835226624
-
-  ### virtualbox
-      alias vbl="VBoxManage list vms" # list all virtualbox vm's on the system
-      alias vbla="VBoxManage list runningvms" # list all running virtualbox vm's, so usefull to check for running vagrant instances
-      alias vblg="VBoxManage list vms | grep" # search the listing of all virtualbox vm's on the system
 
   ## custom scripts
 
@@ -64,12 +28,6 @@
       alias tar+="sh /Volumes/MBP\ -\ Sjugge/Workspace/shell_scripts/tar+.sh" # create a tarball without breaking your head on the syntax
       alias scp+="sh /Volumes/MBP\ -\ Sjugge/Workspace/shell_scripts/scp+.sh" # scp stuff without breaking your head on the syntax
 
-    ### vagrant
-      alias vafy1="cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/precise64lamp/Vagrantfile .; cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/precise64lamp/scripts ." # Vagrantify a repo with precise64lamp stuffs 
-      alias vafy2="cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/squeeze64lamp52/Vagrantfile .; cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/squeeze64lamp52/scripts ." # Vagrantify a repo with squeeze64lamp52 stuffs
-      alias vafy3="cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/precise64lamp-solr46/Vagrantfile .; cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/precise64lamp-solr46/scripts ." # Vagrantify a repo with precise64lamp + Solr 4 stuffs
-
-
   ## helpers & tweaks
 
     ### list and search 
@@ -78,50 +36,17 @@
     alias hog="less /etc/hosts | grep" # search the /etc/hosts file
     #alias ip="DOMAIN='' && host $DOMAIN |grep -m 1 address|cut -d \ -f 4" # get the IP of a host (domain)
 
-    ### list directory content
-    alias ll="clear; pwd; ls -lah" # ls like a boss
-    alias ll+="pwd; ls -aFGhlOTs" # ls like a motherfucking boss
-    alias ll-="clear; ls -1aF && echo ''" # ls like a minimalist
-    alias lsd="ls -d1 */" # ls directories like a minimalist
-    alias ft="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/'" # show a filetree of the current folder
-    alias ftg="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/ /' -e 's/-/|/' | grep" # search the filetree of the current directory
-
   ### misc
     alias mkdir="mkdir -pv" # verbosely create a directory and all directories defined in the path if they do not exist
     alias flushdns="sudo killall -HUP mDNSResponder" # flush dns caches
     alias line="printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -" # print out a line with hyphens
     alias cccc="compass compile --force --environment=development --output-style=expanded && drush @vagrant cc all" # compile with compass and clear caches of Drupal running on a vagrant instance
 
-  ## navigation
-    alias cdc="cd /Volumes/MBP\ -\ Sjugge/Cloud"
-    alias cdd="cd ~/Downloads/" # navigate to the ~/Downloads directory
-    alias cds="cd /Volumes/MBP\ -\ Sjugge/Sites/" # navigate to the Sites directory
-    alias cdw="cd /Volumes/MBP\ -\ Sjugge/Workspace/" # navigate to the Workspace directory
-    alias cwd="pwd | sed 's/ /\\ /g'"
-
   ## system
     alias cpu="top -F -R -o cpu" # display top CPU processes
     alias io="iostat -w1" # disply disk i/o
 
   ## aliases with functions
-
-    ### IP: get host info and only have the IP returned
-    # NOTE: doesn't pick up /etc/hosts file overrides!
-    ip() { host $1 | grep -m 1 address | cut -d \  -f 4 }
-
-    ### coloful man pages
-    # http://apple.stackexchange.com/a/96810/63784
-    man() {
-      env \
-      LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-      LESS_TERMCAP_md=$(printf "\e[1;31m") \
-      LESS_TERMCAP_me=$(printf "\e[0m") \
-      LESS_TERMCAP_se=$(printf "\e[0m") \
-      LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-      LESS_TERMCAP_ue=$(printf "\e[0m") \
-      LESS_TERMCAP_us=$(printf "\e[1;32m") \
-      man "$@"
-    }   
 
     ### Papertrail - with color output 
     # requires papertrail gem
@@ -135,10 +60,10 @@
 
     ### My IP
     # http://www.stevendobbelaere.be/installing-and-configuring-the-oh-my-zsh-shell/
-    function myip() {
-    ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0       : " $2}'
-     ifconfig en0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en0 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
-     ifconfig en0 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en0 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
-     ifconfig en1 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en1 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
-     ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
-    }
+#    myip() {
+#    ifconfig lo0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "lo0: " $2}'
+#     ifconfig en0 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en0 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
+#     ifconfig en0 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en0 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
+#     ifconfig en1 | grep 'inet ' | sed -e 's/:/ /' | awk '{print "en1 (IPv4): " $2 " " $3 " " $4 " " $5 " " $6}'
+#     ifconfig en1 | grep 'inet6 ' | sed -e 's/ / /' | awk '{print "en1 (IPv6): " $2 " " $3 " " $4 " " $5 " " $6}'
+#    }
