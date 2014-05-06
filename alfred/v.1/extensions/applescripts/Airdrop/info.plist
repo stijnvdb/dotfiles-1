@@ -1,28 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>action</key>
-	<false/>
-	<key>background</key>
-	<true/>
-	<key>category</key>
-	<string>APPLESCRIPTS</string>
-	<key>command</key>
-	<string>on alfred_script(q) 
-tell application "Finder"activateopen home #opening airdrop in a new windowtell application "System Events"keystroke "r" using {command down, shift down}end tellend tell
-end alfred_script
-
---applescript source: https://github.com/gnuget/Alfred-Extensions/blob/master/open_airdrop/info.plist</string>
-	<key>disabled</key>
-	<false/>
-	<key>keyword</key>
-	<string>drop</string>
-	<key>parameter</key>
-	<integer>1</integer>
-	<key>subtitle</key>
-	<string>Open Airdrop in a new Finder window</string>
-	<key>title</key>
-	<string>Airdrop</string>
-</dict>
-</plist>
