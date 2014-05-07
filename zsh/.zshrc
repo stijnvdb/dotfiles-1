@@ -1050,7 +1050,7 @@
     alias vre="vagrant reload"
 
     # Get the status of a vagrant instance
-    alias vst="vagrant global-status && vagrant status"
+    alias vst="vagrant global-status && echo '--------------------------------------------------------------------' && vagrant status"
 
     # Destroy a vagrant instance 
     alias vde="vagrant destroy" # destroy a vagrant instance
@@ -1181,19 +1181,6 @@
         # }
         # zle -N zle-keymap-select
 
-      # Prompt sudo information
-      
-        # Set HAS_SUDO according to the current sudo priveleges status.
-        # Based on: http://superuser.com/a/486435
-        # @todo: implement in precmd()
-        # HAS_SUDO_CHECK=$(sudo -n uptime 2>&1|grep "load"|wc -l)
-        #   if [ ${HAS_SUDO_CHECK} -gt 0 ]
-        #     then
-        #       HAS_SUDO="sudo"
-        #     else
-        #       HAS_SUDO="%{$at_strike%}sudoo%{$at_strike_off%}"
-        #   fi
-
     # Default prompt
 
       # The default left prompt
@@ -1226,15 +1213,25 @@
     # Executed before each prompt. Note that precommand functions are not re-executed simply because the command line is redrawn, 
     # as happens, for example, when a notification about an exiting job is displayed.
     precmd() {
+      # sudo check
+      # Based on: http://superuser.com/a/486435
+      HAS_SUDO_CHECK=$(sudo -n uptime 2>&1|grep "load"|wc -l)
+      if [ ${HAS_SUDO_CHECK} -gt 0 ]; then
+        HAS_SUDO="(sudo)"
+      else
+        HAS_SUDO=" "
+      fi
+
+      # git check + prompt selection
       if git rev-parse --git-dir > /dev/null 2>&1; then
         PROMPT='${vcs_info_msg_0_}%{$at_normal%}%{$fg_red%} »%{$at_normal%} '
         export GIT_HASH="$(git log --pretty=format:'%h' -n 1)"
-        export RPROMPT="-[%{$fg_red%} $GIT_HASH %{$at_normal%}]-"
+        export RPROMPT="-[%{$fg_red%} $GIT_HASH %{$at_normal%}]- $HAS_SUDO"
         vcs_info
       else
         PROMPT='%{$at_normal%} %~%{$fg_red%} »%{$at_normal%} '
         export GIT_HASH=""
-        export RPROMPT=" "
+        export RPROMPT="$HAS_SUDO"
         unset vcs_info_msg_${i}_
       fi
     }
