@@ -98,11 +98,11 @@
     # Stock documentation may not work for certain environments.
     zmodload zsh/terminfo
     autoload up-line-or-beginning-search
-    autoload down-line-or-beginning-search
+    autoload down-line-or-beginning-search # @todo: fix, not working atm
     zle -N up-line-or-beginning-search
-    zle -N down-line-or-beginning-search
+    zle -N down-line-or-beginning-search # @todo: fix, not working atm
     bindkey "\e[A" up-line-or-beginning-search
-    bindkey "\e[B" down-line-or-beginning-search
+    bindkey "\e[B" down-line-or-beginning-search # @todo: fix, not working atm
 
 ### Configuration
 
@@ -965,7 +965,7 @@
   # Helper aliases for Git VCS
 
     # Go to the root of the current Git directory
-    alias cdg="cd '$(git rev-parse --show-toplevel)'"
+    alias cdg="cd $(git rev-parse --show-cdup)"
 
     # Git status with any and all relevant information
     alias gst="clear; echo '--Location--'; echo ''; pwd; echo ''; echo '--Remotes--'; echo ''; git remote -v; echo ''; echo '--Branches--'; echo ''; git branch -a; echo ''; echo '--Status--'; echo ''; git status"
@@ -1217,16 +1217,16 @@
       # Based on: http://superuser.com/a/486435
       HAS_SUDO_CHECK=$(sudo -n uptime 2>&1|grep "load"|wc -l)
       if [ ${HAS_SUDO_CHECK} -gt 0 ]; then
-        HAS_SUDO="(sudo)"
+        HAS_SUDO="(sudo) "
       else
-        HAS_SUDO=" "
+        HAS_SUDO=""
       fi
 
       # git check + prompt selection
       if git rev-parse --git-dir > /dev/null 2>&1; then
         PROMPT='${vcs_info_msg_0_}%{$at_normal%}%{$fg_red%} »%{$at_normal%} '
         export GIT_HASH="$(git log --pretty=format:'%h' -n 1)"
-        export RPROMPT="-[%{$fg_red%} $GIT_HASH %{$at_normal%}]- $HAS_SUDO"
+        export RPROMPT="$HAS_SUDO-[%{$fg_red%} $GIT_HASH %{$at_normal%}]-"
         vcs_info
       else
         PROMPT='%{$at_normal%} %~%{$fg_red%} »%{$at_normal%} '
