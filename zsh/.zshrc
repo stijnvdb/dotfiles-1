@@ -874,7 +874,7 @@
       # In addition, the VI option is unset. Turning it off has no effect. 
       # The option setting is not guaranteed to reflect the current keymap. 
       # This option is provided for compatibility; bindkey is the recommended interface.
-      setopt EMACS
+      # setopt EMACS
 
       # Start up the line editor in overstrike mode.
       # setopt OVERSTRIKE
@@ -889,7 +889,12 @@
       # In addition, the EMACS option is unset. Turning it off has no effect. 
       # The option setting is not guaranteed to reflect the current keymap. 
       # This option is provided for compatibility; bindkey is the recommended interface.
-      # setopt VI
+      setopt VI
+
+      # By default, there is a 0.4 second delay after you hit the <ESC> key and when the mode change is registered. 
+      # This results in a very jarring and frustrating transition between modes. Let's reduce this delay to 0.1 seconds.
+      # Source: http://dougblack.io/words/zsh-vi-mode.html
+      export KEYTIMEOUT=1
 
       # Use the zsh line editor. Set by default in interactive shells connected to a terminal.
       # Set by default.
@@ -956,10 +961,10 @@
     alias cdd="cd ~/Downloads/" # @todo: alter hard-coded path to configurable variable
     
     # Change dir to designated Sites directory
-    alias cds="cd /Volumes/MBP\ -\ Sjugge/Sites/" # @todo: alter hard-coded path to secondary home folder
+    alias cds="cd /Volumes/MBP\ -\ Sjugge/Sites/ && clear && ll" # @todo: alter hard-coded path to secondary home folder
 
     # Change dir ro designated Workspace folder
-    alias cdw="cd /Volumes/MBP\ -\ Sjugge/Workspace/" # @todo: alter hard-coded path to configurable variable
+    alias cdw="cd /Volumes/MBP\ -\ Sjugge/Workspace/ && clear && ll" # @todo: alter hard-coded path to configurable variable
 
   ## git
   # Helper aliases for Git VCS
@@ -1099,7 +1104,7 @@
   # Helper aliases for zsh
 
     # Source .zshrc 
-    alias sz="source ~/.zshrc"
+    alias sz="clear && source ~/.zshrc"
 
     # Run zsh-newuser-install wizard
     alias zwiz="autoload -Uz zsh-newuser-install; zsh-newuser-install -f"
@@ -1169,25 +1174,17 @@
 
     # Helpers
 
-      # Prompt vi information
+      # VI prompt information
 
-        # Set VIMODE according to the current mode (default “[i]”)
+        # Set VI_MODE according to the current mode
         # Source: http://hamberg.no/erlend/posts/2010-10-17-show-current-vi-mode-in-zsh-prompt.html
-        # @todo: implement in precmd()
-        # VI_MODE='[I]'
-        # function zle-keymap-select {
-        #  VI_MODE="${${KEYMAP/vicmd/[N]}/(main|viins)/[i]}"
-        #  zle reset-prompt
-        # }
-        # zle -N zle-keymap-select
-
-    # Default prompt
-
-      # The default left prompt
-      # PROMPT=' %{$at_normal%} %~%{$at_bold%}${vcs_info_msg_0_}%{$at_normal%}%{$fg_red%} »%{$at_normal%} ' # set in precmd()
-
-      # The default right prompt
-      # RPROMPT='-[ $GIT_HASH ]-' # set in precmd()
+        function zle-line-init zle-keymap-select {
+          VI_MODE="-- INSERT --"
+          RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+          zle reset-prompt
+        }
+        zle -N zle-line-init
+        zle -N zle-keymap-select
 
     # Additional prompts
 
@@ -1217,21 +1214,21 @@
       # Based on: http://superuser.com/a/486435
       HAS_SUDO_CHECK=$(sudo -n uptime 2>&1|grep "load"|wc -l)
       if [ ${HAS_SUDO_CHECK} -gt 0 ]; then
-        HAS_SUDO="(sudo) "
+        SUDO_PROMPT="(sudo) "
       else
-        HAS_SUDO=""
+        SUDO_PROMPT=" "
       fi
 
       # git check + prompt selection
       if git rev-parse --git-dir > /dev/null 2>&1; then
         PROMPT='${vcs_info_msg_0_}%{$at_normal%}%{$fg_red%} »%{$at_normal%} '
         export GIT_HASH="$(git log --pretty=format:'%h' -n 1)"
-        export RPROMPT="$HAS_SUDO-[%{$fg_red%} $GIT_HASH %{$at_normal%}]-"
+        export RPROMPT="$SUDO_PROMPT [%{$fg_red%} $GIT_HASH %{$at_normal%}] $VI_MODE"
         vcs_info
       else
         PROMPT='%{$at_normal%} %~%{$fg_red%} »%{$at_normal%} '
         export GIT_HASH=""
-        export RPROMPT="$HAS_SUDO"
+        export RPROMPT="$SUDO_PROMPT $VI_MODE"
         unset vcs_info_msg_${i}_
       fi
     }
