@@ -955,6 +955,12 @@
 
 ### Aliases
 
+  ## Alias
+  # Whut? Jup. Alias helper aliases.
+
+    # Grep through the aliases and display the related comment
+    alias alig="less ~/.zshrc | grep -B 1 'alias =' | grep -B 1"
+
   ## cd
   # Change directory commands, mostly custom
 
@@ -1122,9 +1128,9 @@
     cdf() {
         target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
         if [ "$target" != "" ]; then
-            cd "$target"; pwd
+          cd "$target"; pwd
         else
-            echo 'No Finder window found' >&2
+          echo 'No Finder window found' >&2
         fi
     }
 
@@ -1132,22 +1138,24 @@
 
     # Get host info and only have the IP returned
     # NOTE: doesn't pick up /etc/hosts file overrides!
-    ip() { host $1 | grep -m 1 address | cut -d \  -f 4 }
+    ip() {
+      host $1 | grep -m 1 address | cut -d \  -f 4
+    }
 
   ## man
 
     # Colourful man pages
     # Source: http://apple.stackexchange.com/a/96810/63784
     man() {
-        env \
-        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-        LESS_TERMCAP_md=$(printf "\e[1;31m") \
-        LESS_TERMCAP_me=$(printf "\e[0m") \
-        LESS_TERMCAP_se=$(printf "\e[0m") \
-        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-        LESS_TERMCAP_ue=$(printf "\e[0m") \
-        LESS_TERMCAP_us=$(printf "\e[1;32m") \
-        man "$@"
+      env \
+      LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+      LESS_TERMCAP_md=$(printf "\e[1;31m") \
+      LESS_TERMCAP_me=$(printf "\e[0m") \
+      LESS_TERMCAP_se=$(printf "\e[0m") \
+      LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+      LESS_TERMCAP_ue=$(printf "\e[0m") \
+      LESS_TERMCAP_us=$(printf "\e[1;32m") \
+      man "$@"
     }
 
   ## Insert sudo
