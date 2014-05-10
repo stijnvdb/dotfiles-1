@@ -18,7 +18,7 @@
 ### Helpers
 
   # Readable color config
-  source ~/.zsh/config-zsh.zsh
+  source ~/.zsh/config-color.zsh
 
 ### Autoload
 

@@ -6,7 +6,7 @@
   # Whut? Jup. Alias helper aliases.
 
     # Grep through the aliases and display the related comment
-    alias alig="less ~/.zshrc | grep -B 1 'alias' | grep -B 1 '=*' | grep -B 1" 
+    alias alig="less ~/.zsh/aliases.zsh | grep -B 1" 
 
   ## cd
   # Change directory commands, mostly custom
