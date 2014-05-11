@@ -17,7 +17,7 @@
 
 ### Helpers
 
-  # Readable color config
+  # Source humanly readable color config
   source ~/.zsh/config-color.zsh
 
 ### Autoload
@@ -41,13 +41,14 @@
 
 ### Plugins
 
-  # Source plugins
+  # Source plugins for ZSH
   source ~/.zsh/plugins.zsh
 
 ### Configuration
 
   ## ZSH configuration
 
+    # Source config for ZSH
     source ~/.zsh/config-zsh.zsh
 
   ## Parameters & config used by the shell
@@ -101,12 +102,12 @@
 
 ### Source stuffs
 
-  # Source aliases
+  # Source aliases for ZSH
   source ~/.zsh/aliases.zsh
 
 ### Functions
 
-  ##
+  ## Source functions for ZSH
   source ~/.zsh/functions.custom.zsh
 
 ### Prompt
