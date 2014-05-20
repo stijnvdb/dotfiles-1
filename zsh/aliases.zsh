@@ -6,7 +6,7 @@
 # Whut? Jup. Alias helper aliases.
 
   # Grep through the aliases and display the related comment
-  alias alig="less ~/.zsh/aliases.zsh | grep -B 1"
+  alias alig="less ~/.zsh/aliases.zsh | grep -A 1 -B 1"
 
 ## cd
 # Change directory commands, mostly custom
@@ -55,6 +55,12 @@
 
   # List git log entries, with altered files for each log entry
   alias gl="git log --name-status"
+
+  # Git log - changelog style
+  alias gcl-="git log origin/master..HEAD --graph --pretty=format:'%h by %an:%d %s' --abbrev-commit"
+
+  # Git log - full changelog
+  alias gcl+="git log --pretty=format:'* %h by %an:%d %s' --abbrev-commit"
 
   # List git branches, including remotes
   alias gtl="git show-branch --all"
