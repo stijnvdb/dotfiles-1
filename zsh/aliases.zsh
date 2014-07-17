@@ -155,22 +155,22 @@
 # Helper aliases for vagrantifying projects Wunderkraut style
 
   # PHP-5.3 & Solr 3.6
-  alias vafy1="cp -r ~/workspace/vagrant/precise-php53-solr36/Vagrantfile .; cp -r ~/workspace/vagrant/scripts . cp -r ~/workspace/vagrant/precise-php53-solr36/scripts ."
+  alias vafy1="cp -r ~/workspace/vagrant/precise-php53-solr36/Vagrantfile .; cp -r ~/workspace/vagrant/scripts .; cp -r ~/workspace/vagrant/precise-php53-solr36/scripts ."
 
   # PHP-5.3 & Solr 4.6
-  alias vafy2="cp -r ~/workspace/vagrant/precise-php53-solr46/Vagrantfile .; cp -r ~/workspace/vagrant/scripts . cp -r ~/workspace/vagrant/precise-php53-solr46/scripts ."
+  alias vafy2="cp -r ~/workspace/vagrant/precise-php53-solr46/Vagrantfile .; cp -r ~/workspace/vagrant/scripts .; cp -r ~/workspace/vagrant/precise-php53-solr46/scripts ."
 
   # PHP-5.5 & Solr 3.6
-  alias vafy3="cp -r ~/workspace/vagrant/precise-php53-solr36/Vagrantfile .; cp -r ~/workspace/vagrant/scripts . cp -r ~/workspace/vagrant/precise-php53-solr36/scripts ."
+  alias vafy3="cp -r ~/workspace/vagrant/precise-php53-solr36/Vagrantfile .; cp -r ~/workspace/vagrant/scripts .; cp -r ~/workspace/vagrant/precise-php53-solr36/scripts ."
 
   # PHP-5.5 & Solr 4.6
-  alias vafy4="cp -r ~/workspace/vagrant/precise-php53-solr36/Vagrantfile .; cp -r ~/workspace/vagrant/scripts . cp -r ~/workspace/vagrant/precise-php53-solr36/scripts ."
+  alias vafy4="cp -r ~/workspace/vagrant/precise-php53-solr36/Vagrantfile .; cp -r ~/workspace/vagrant/scripts .; cp -r ~/workspace/vagrant/precise-php53-solr36/scripts ."
 
   # Alfresco + PHP-5.3 & Solr 4.6
-  alias vafy5="cp -r ~/workspace/vagrant/centos-alfresco/Vagrantfile .; cp -r ~/workspace/vagrant/centos-alfresco/alfresco_scripts . cp -r ~/workspace/vagrant/scripts . cp -r ~/workspace/vagrant/centos-alfresco/scripts ."
+  alias vafy5="cp -r ~/workspace/vagrant/centos-alfresco/Vagrantfile .; cp -r ~/workspace/vagrant/centos-alfresco/scripts_alfresco .; cp -r ~/workspace/vagrant/scripts .; cp -r ~/workspace/vagrant/centos-alfresco/scripts ."
 
   # Carrefour My Invoice
-  alias vafy6="cp -r ~/workspace/vagrant/myinvoice/Vagrantfile .; cp -r ~/workspace/vagrant/scripts . cp -r ~/workspace/vagrant/myinvoice/scripts ."
+  alias vafy6="cp -r ~/workspace/vagrant/myinvoice/Vagrantfile .; cp -r ~/workspace/vagrant/scripts .; cp -r ~/workspace/vagrant/myinvoice/scripts ."
 
 ## Virtualbox
 # Helper aliases for Virtualbox
