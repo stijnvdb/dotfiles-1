@@ -21,7 +21,7 @@ settings.php*
 # Vagrant and related files
 .vagrant*
 *Vagrantfile
-*scripts/
+scripts/
 
 # db's
 *db/*
