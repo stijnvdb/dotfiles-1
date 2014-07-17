@@ -141,6 +141,9 @@
   # Execute drush commands on a vagrant box
   alias dv="drush @vagrant"
 
+  # Drush cache clear with notification
+  alias dvcc="dv cc all && terminal-notifier -title 'drush @vagrant' -message 'all caches cleared'"
+
   # A horrible thing to have aliased, set the UID1's of a Drupal site running on vagrant to `admin`.
   # Only used when credentials are not provided on intake or other edge-cases.
   alias dvpw="drush @vagrant upwd admin --password='admin'"
@@ -151,14 +154,23 @@
 ## Vagrant-ify
 # Helper aliases for vagrantifying projects Wunderkraut style
 
-  # Vagrantify a repo with precise64lamp stuffs
-  alias vafy1="cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/precise64lamp/Vagrantfile .; cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/precise64lamp/scripts ." # @todo: alter hard-coded path to configurable variable
+  # PHP-5.3 & Solr 3.6
+  alias vafy1="cp -r ~/workspace/vagrant/precise-php53-solr36/Vagrantfile .; cp -r ~/workspace/vagrant/scripts . cp -r ~/workspace/vagrant/precise-php53-solr36/scripts ."
 
-  # Vagrantify a repo with squeeze64lamp52 stuffs
-  alias vafy2="cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/squeeze64lamp52/Vagrantfile .; cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/squeeze64lamp52/scripts ." # @todo: alter hard-coded path to configurable variable
+  # PHP-5.3 & Solr 4.6
+  alias vafy2="cp -r ~/workspace/vagrant/precise-php53-solr46/Vagrantfile .; cp -r ~/workspace/vagrant/scripts . cp -r ~/workspace/vagrant/precise-php53-solr46/scripts ."
 
-  # Vagrantify a repo with precise64lamp + Solr 4 stuffs
-  alias vafy3="cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/precise64lamp-solr46/Vagrantfile .; cp -r /Volumes/MBP\ -\ Sjugge/Workspace/vagrant/precise64lamp-solr46/scripts ." # @todo: alter hard-coded path to configurable variable
+  # PHP-5.5 & Solr 3.6
+  alias vafy3="cp -r ~/workspace/vagrant/precise-php53-solr36/Vagrantfile .; cp -r ~/workspace/vagrant/scripts . cp -r ~/workspace/vagrant/precise-php53-solr36/scripts ."
+
+  # PHP-5.5 & Solr 4.6
+  alias vafy4="cp -r ~/workspace/vagrant/precise-php53-solr36/Vagrantfile .; cp -r ~/workspace/vagrant/scripts . cp -r ~/workspace/vagrant/precise-php53-solr36/scripts ."
+
+  # Alfresco + PHP-5.3 & Solr 4.6
+  alias vafy5="cp -r ~/workspace/vagrant/centos-alfresco/Vagrantfile .; cp -r ~/workspace/vagrant/centos-alfresco/alfresco_scripts . cp -r ~/workspace/vagrant/scripts . cp -r ~/workspace/vagrant/centos-alfresco/scripts ."
+
+  # Carrefour My Invoice
+  alias vafy6="cp -r ~/workspace/vagrant/myinvoice/Vagrantfile .; cp -r ~/workspace/vagrant/scripts . cp -r ~/workspace/vagrant/myinvoice/scripts ."
 
 ## Virtualbox
 # Helper aliases for Virtualbox
