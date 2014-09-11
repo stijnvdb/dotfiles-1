@@ -112,7 +112,7 @@
 
   # Bring up a vagrant box after getting sudo rights and show a notification center alert when done.
   # See http://sjugge.be/blog/devops/pimped-out-vagrant
-  alias vup="sudo echo tnx && vagrant up && terminal-notifier -title 'Vagrant up completed' -message 'Get back to your command line!'"
+  alias vup="clear && sudo echo '   \(^-^)/' && clear && vagrant up && terminal-notifier -title 'Vagrant up completed' -message 'Get back to your command line!'"
 
   # ssh into a running vagrant box
   alias vssh="vagrant ssh"
@@ -127,7 +127,7 @@
   alias vre="vagrant reload"
 
   # Get the status of a vagrant instance
-  alias vst="vagrant global-status && echo '--------------------------------------------------------------------' && vagrant status"
+  alias vst="clear && echo '# Version' && echo '' && vagrant version | grep  Version && echo '' && echo '# Status' && echo '' && vagrant global-status && echo '--------------------------------------------------------------------' && vagrant status && echo ''"
 
   # Destroy a vagrant instance
   alias vde="vagrant destroy" # destroy a vagrant instance
@@ -203,3 +203,6 @@
 
   # Print out a line with hyphens
   alias line="printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -"
+
+  # ssh'ing? Why not very verbose?
+  alias ssh="ssh -vv "
