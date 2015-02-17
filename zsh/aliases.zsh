@@ -130,10 +130,10 @@
   alias vst="clear && echo '# Version' && echo '' && vagrant version | grep  Version && echo '' && echo '# Status' && echo '' && vagrant global-status && echo '--------------------------------------------------------------------' && vagrant status && echo ''"
 
   # Destroy a vagrant instance
-  alias vde="vagrant destroy" # destroy a vagrant instance
+  alias vde="echo 'Making sure you have a db dump before destroying'; echo 'this includes up-ing your box to complete the dump.'; echo 'CTRL+C now to abort!'; sleep 8; drush @vagrant cc all; drush @vagrant sql-dump --result-file=/home/vagrant/db/vagrant--$(date +%Y-%m-%d-%H.%M.%S).sql; vagrant halt; echo 'A db dump was created and available in the db folder.'; echo 'The box will now be destroyed.'; echo 'CTRL+C now to abort!'; vagrant destroy --force" # destroy a vagrant instance the nice way
 
   # Force destroy a vagrant instance
-  alias vdef="vagrant destroy -f"
+  alias vdef="vagrant destroy -f" # destroy a vagrant instance the don't give a sh!t way
 
 ## drush + vagrant
 # Helper aliases for drush on vagrant instances
